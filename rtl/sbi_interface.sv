@@ -1,3 +1,13 @@
+// -----------------------------------------------------------------------------
+// File Name: sbi_interface.sv
+// Description:
+//     A simple memory interface based on SBI. The SBI is designed for
+//     efficient burst-only communication between modules in a hardware system.
+//
+// Author: shsjung (github.com/shsjung)
+// Date Created: 2024-12-13
+// -----------------------------------------------------------------------------
+
 module sbi_interface #(
     parameter  int Width = 32,
     parameter  int Depth = 256,

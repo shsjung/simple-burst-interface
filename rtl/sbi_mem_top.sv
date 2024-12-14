@@ -1,3 +1,15 @@
+// -----------------------------------------------------------------------------
+// File Name: sbi_mem_top.sv
+// Description:
+//     A module which includes the following components:
+//     1. A memory interface module for interacting with the memory.
+//     2. A memory model
+//     This module supports parametrized address and data widths.
+//
+// Author: shsjung (github.com/shsjung)
+// Date Created: 2024-12-13
+// -----------------------------------------------------------------------------
+
 module sbi_mem_top #(
     parameter  int Width = 32,
     parameter  int Depth = 256,
