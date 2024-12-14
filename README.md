@@ -21,6 +21,8 @@ Below is a detailed description of **Simple Burst-only Interface (SBI)**:
 
 | Signal    | Direction | Description |
 | --------- | --------- | --- |
+| `bCLK`    | input     | System clock signal |
+| `bRSTn`   | input     | Active-low reset signal |
 | `bADDR`   | input     | Start address for memory access |
 | `bSTART`  | input     | Indicates the beginning of a memory operation |
 | `bACCESS` | input     | Triggers memory access during an operation |

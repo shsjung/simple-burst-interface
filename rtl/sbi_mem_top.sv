@@ -15,9 +15,8 @@ module sbi_mem_top #(
     parameter  int Depth = 256,
     localparam int Aw    = $clog2(Depth)
 ) (
-    input              clk_i,
-    input              rst_ni,
-
+    input              bCLK,
+    input              bRSTn,
     input  [   Aw-1:0] bADDR,
     input              bSTART,
     input              bACCESS,
@@ -37,9 +36,8 @@ module sbi_mem_top #(
         .Width (Width),
         .Depth (Depth)
     ) inst_sbi_slave (
-        .clk_i   (clk_i),
-        .rst_ni  (rst_ni),
-
+        .bCLK    (bCLK),
+        .bRSTn   (bRSTn),
         .bADDR   (bADDR),
         .bSTART  (bSTART),
         .bACCESS (bACCESS),
@@ -59,7 +57,7 @@ module sbi_mem_top #(
         .Width (Width),
         .Depth (Depth)
     ) inst_ram (
-        .clk_i   (clk_i),
+        .clk_i   (bCLK),
 
         .we_i    (we),
         .re_i    (re),

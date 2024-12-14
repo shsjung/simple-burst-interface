@@ -3,17 +3,17 @@
 #include "verilated_vcd_c.h"
 
 #define CLOCK_POS \
-    top->clk_i = !top->clk_i; \
+    top->bCLK = !top->bCLK; \
     top->eval()
 #define CLOCK_NEG \
     top->eval(); \
     tfp->dump(local_time++); \
-    top->clk_i = !top->clk_i; \
+    top->bCLK = !top->bCLK; \
     top->eval(); \
     tfp->dump(local_time++)
 #define CLOCK_DELAY(x) \
     for (int xx=0; xx < x; xx++) { \
-        top->clk_i = !top->clk_i; \
+        top->bCLK = !top->bCLK; \
         CLOCK_NEG; \
     }
 
@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
     tfp->open("sbi_mem_top.vcd");
 
     CLOCK_POS;
-    top->rst_ni = 0;
+    top->bRSTn = 0;
     top->bADDR = 0;
     top->bSTART = 0;
     top->bACCESS = 0;
@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
     CLOCK_DELAY(5);
 
     CLOCK_POS;
-    top->rst_ni = 1;
+    top->bRSTn = 1;
     CLOCK_NEG;
 
     CLOCK_DELAY(10);

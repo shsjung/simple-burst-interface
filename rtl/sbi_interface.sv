@@ -13,9 +13,8 @@ module sbi_interface #(
     parameter  int Depth = 256,
     localparam int Aw    = $clog2(Depth)
 ) (
-    input              clk_i,
-    input              rst_ni,
-
+    input              bCLK,
+    input              bRSTn,
     input  [   Aw-1:0] bADDR,
     input              bSTART,
     input              bACCESS,
@@ -34,8 +33,8 @@ module sbi_interface #(
     logic [Aw-1:0] raddr, waddr;
     logic qvalid;
 
-    always_ff @(posedge clk_i or negedge rst_ni) begin
-        if (!rst_ni) begin
+    always_ff @(posedge bCLK or negedge bRSTn) begin
+        if (!bRSTn) begin
             raddr <= 'h0;
         end else if (bSTART & ~bWRITE) begin
             raddr <= bADDR;
@@ -44,8 +43,8 @@ module sbi_interface #(
         end
     end
 
-    always_ff @(posedge clk_i or negedge rst_ni) begin
-        if (!rst_ni) begin
+    always_ff @(posedge bCLK or negedge bRSTn) begin
+        if (!bRSTn) begin
             waddr <= 'h0;
         end else if (bSTART & bWRITE) begin
             waddr <= bADDR;
@@ -54,8 +53,8 @@ module sbi_interface #(
         end
     end
 
-    always_ff @(posedge clk_i or negedge rst_ni) begin
-        if (!rst_ni) begin
+    always_ff @(posedge bCLK or negedge bRSTn) begin
+        if (!bRSTn) begin
             qvalid <= 1'h0;
         end else begin
             qvalid <= bACCESS & ~bWRITE;
