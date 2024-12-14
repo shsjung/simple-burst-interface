@@ -1,0 +1,10 @@
+{signal: [
+  {name: 'clk',     wave: 'p.............'},
+  {name: 'bADDR',   wave: 'x3x...........', data: ['WA']},
+  {name: 'bSTART',  wave: '010...........'},
+  {name: 'bACCESS', wave: '0..1.010..1..0'},
+  {name: 'bWRITE',  wave: '0101.010..1..0'},
+  {name: 'bD',      wave: 'x..55x5x..555x', data: ['WD1', 'WD2', 'WD3', 'WD4', 'WD5', 'WD6']},
+  {name: 'bQ',      wave: 'x.............'},
+  {name: 'bVALID',  wave: '0.............'},
+]}
