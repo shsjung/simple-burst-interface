@@ -41,7 +41,7 @@ Below is a detailed description of **Simple Burst-only Interface (SBI)**:
    - Memory Access:
      - Once the starting address is configured, the `bACCESS` signal triggers the memory access.
      - If `bWRITE` is `1` during the `bACCESS` signal, a write operation occurs with the data provided on `bD`.
-     - If 'bWRITE` is `0` during the `bACCESS` signal, a read operation occurs and the data is available on `bQ` in the next clock cycle.
+     - If `bWRITE` is `0` during the `bACCESS` signal, a read operation occurs and the data is available on `bQ` in the next clock cycle.
 
 ### Parameters
 
