@@ -14,7 +14,7 @@ Below is a detailed description of **Simple Burst-only Interface (SBI)**:
 
 2. Read and Write Operations:
 
-   - The SBI supports both read and write operations, buth they cannot occur simultaneously.
+   - The SBI supports both read and write operations, but they cannot occur simultaneously.
 
 
 ### Signals:
@@ -50,14 +50,6 @@ Below is a detailed description of **Simple Burst-only Interface (SBI)**:
 | `Width`   | 32            | Bit width of the data |
 | `Depth`   | 256           | Memory depth |
 
-## Example Waveforms
-
-![read](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_0.json)
-
-![write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/write_0.json)
-
-![read_write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_write_0.json)
-
 ## File Structure
 
 - `rtl/`
@@ -86,6 +78,41 @@ The provided testbench is designed for simulation using Verilator. Ensure Verila
    ```bash
    make
    ```
+
+## Example Waveforms
+
+Below are example waveforms of the SBI protocol. The third waveform is generated from the tesbench simulation.
+
+1. Read operation
+
+   ![read](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_0.json)
+
+   This waveform illustrates a read operation using the SBI protocol. Key points:
+
+   - The `bSTART` signal is asserted, and the `bADDR` signal provides the starting address for the read operation.
+   - The `bWRITE` signal is deasserted (`0`), indicating a read operation.
+   - The `bACCESS` signal triggers the read, and valid data is available on `bQ` in the next clock cycle.
+
+2. Write operation
+
+   ![write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/write_0.json)
+
+   This waveform demonstrates a write operation:
+
+   - The `bSTART` signal is asserted, and the `bADDR` signal specifies the starting address for the write operation.
+   - The `bWRITE` signal is asserted (`1`), indicating a write operation.
+   - The `bD` signal carries the data to be written, synchronized with the `bACCESS` signal.
+
+3. Read and write operation
+
+   ![read_write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_write_0.json)
+
+   This waveform shows both read and write operations in sequence, as generated from the testbench simulation:
+
+   - The `bSTART` signal initializes the operation, with the `bADDR` signal changing appropriately for each type of operation.
+   - The `bWRITE` signal toggle between `0` (read) and `1` (write) to indicate the type of operation.
+   - The `bACCESS` signal coordinates both operations, ensuring data is written to memory or read from memory as expected.
+   - Valid ata appears on `bQ` during the read phase, while data is provided on `bD` during the write phase.
 
 ## License
 
