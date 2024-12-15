@@ -14,7 +14,7 @@ Below is a detailed description of **Simple Burst-only Interface (SBI)**:
 
 2. Read and Write Operations:
 
-   - The SBI supports both read and write operations, but they cannot occur simultaneously.
+   - The SBI supports both read and write operations. Both operations can be enabled concurrently, but they cannot be exected in the same clock cycle.
 
 
 ### Signals:
