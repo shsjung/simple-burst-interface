@@ -1,5 +1,5 @@
 {signal: [
-  {name: 'clk',     wave: 'p.............'},
+  {name: 'bCLK',    wave: 'p.............'},
   {name: 'bADDR',   wave: 'x3x...........', data: ['WA']},
   {name: 'bSTART',  wave: '010...........'},
   {name: 'bACCESS', wave: '0..1.010..1..0'},

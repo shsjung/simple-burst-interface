@@ -85,7 +85,7 @@ Below are example waveforms of the SBI protocol. The third waveform is generated
 
 1. Read operation
 
-   ![read](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_0.json)
+   ![read](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_1.json)
 
    This waveform illustrates a read operation using the SBI protocol. Key points:
 
@@ -95,7 +95,7 @@ Below are example waveforms of the SBI protocol. The third waveform is generated
 
 2. Write operation
 
-   ![write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/write_0.json)
+   ![write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/write_1.json)
 
    This waveform demonstrates a write operation:
 
@@ -105,7 +105,7 @@ Below are example waveforms of the SBI protocol. The third waveform is generated
 
 3. Read and write operation
 
-   ![read_write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_write_0.json)
+   ![read_write](https://svg.wavedrom.com/github/shsjung/simple-burst-interface/main/wavedrom/read_write_1.json)
 
    This waveform shows both read and write operations in sequence, as generated from the testbench simulation:
 
