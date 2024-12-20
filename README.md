@@ -54,7 +54,7 @@ Below is a detailed description of **Simple Burst-only Interface (SBI)**:
 
 - `rtl/`
   - `ram_single.sv`: Single-port RAM
-  - `sbi_interface.sv`
+  - `sbi_interface.sv`: SBI module
   - `sbi_mem_top.sv`: Top module that instantiates the memory model and the interface module
 - `wavedrom/`: Waveform diagrams
 - `obj_dir/`: Directory containing object files and executables generated during Verilator simulation
